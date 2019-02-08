@@ -1,2 +1,40 @@
-<h1>Bookers#index</h1>
-<p>Find me in app/views/bookers/index.html.erb</p>
+<!-- サクセスメッセージ -->
+<% if flash[:notice] %>
+	<p class="notice"><%= flash[:notice] %></p>
+<% end %>
+<!-- サクセスメッセージ -->
+<!-- 投稿内容一覧-->
+<h2 class="headlines">Books</h2>
+<table>
+	<tr>
+	<th class="titles">Title</th>
+	<th class="bodys">Body</th>
+	<th></th>
+	</tr>
+	<% @bookers.each do |booker| %>
+	<tr>
+		<td><%= booker.title %></td>
+		<td
+		><%= booker.body %></td>
+		<td>
+			<span><%= link_to 'show', booker_path(booker.id), class:"show_#{booker.id}" %></span>
+			<span><%= link_to 'edit', edit_booker_path(booker.id), class:"edit_#{booker.id}"%></span>
+			<span><%= link_to 'delete', booker_path(booker.id), method: :delete, data: { confirm: '削除してよろしいですか?' },class:"destroy_#{booker.id}" %></span>
+		</td>
+	</tr>
+<% end %>
+</table>
+<!-- 投稿内容一覧-->
+<!-- 投稿フォーム-->
+<h2 class="headlines">New Book</h2>
+<div class="forms">
+	<%= form_for(@booker) do |f|%>
+		<h2 class="titles">Title</h2>
+		<%= f.text_field :title, class:"book_title" %>
+		<h2 class="bodys">Body</h2>
+		<%= f.text_area :body, class:"book_body" %>
+		<br>
+		<%= f.submit 'Create Books'%>
+	<% end %>
+</div>
+<!-- 投稿フォーム-->

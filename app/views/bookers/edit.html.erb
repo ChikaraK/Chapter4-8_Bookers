@@ -1,2 +1,17 @@
-<h1>Bookers#edit</h1>
-<p>Find me in app/views/bookers/edit.html.erb</p>
+<h2 class="headlines">Editing Book</h2>
+<div class="forms">
+	<%= form_for(@booker) do |f|%>
+		<h2 class="titles">タイトル</h2>
+		<%= f.text_field :title, class:"book_title"%>
+		<h2 class="bodys">本文</h2>
+		<%= f.text_area :body, class:"book_body"%><br>
+		<%= f.submit 'Update Book'%>
+	<% end %>
+</div>
+<div class="edit_back">
+	<p>
+		<%= link_to 'Show', booker_path(@booker.id), class:"show_#{@booker.id}" %>
+		|
+		<%= link_to 'Back', bookers_path,class:"back" %>
+	</p>
+</div>

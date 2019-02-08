@@ -13,3 +13,66 @@
  *= require_tree .
  *= require_self
  */
+
+
+ /*common*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.headlines{
+	margin: 20px 20px;
+}
+.titles{
+	font-size: 15px;
+	width: 30%;
+}
+.bodys{
+	font-size: 15px;
+	width: 50%;
+}
+.forms{
+	margin: 0 20px 20px 20px;
+}
+/*common*/
+
+/*top*/
+.top-heading{
+	font-size: 30px;
+	margin: 15px 0 10px 15px;
+}
+.top-body{
+	margin: 0 0 10px 25px;
+	line-height: 30px;
+}
+/*top*/
+/*index*/
+.notice{
+	margin: 20px 20px;
+	color: red;
+}
+
+table{
+	margin:0 20px 20px 20px;
+	width: 80%;
+}
+
+th {
+	padding-bottom: 3px;
+}
+td {
+	font-size: 13px;
+    padding: 0 5px 5px 5px;
+}
+/*index*/
+/*show*/
+.show_para{
+	font-size: 13px;
+    line-height: 20px;
+    margin: 30px;
+}
+.edit_back{
+	margin-left: 20px;
+}
+/*show*/
